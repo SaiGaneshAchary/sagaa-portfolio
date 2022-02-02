@@ -1,0 +1,494 @@
+@mixin flexCol() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+  margin: auto;
+  width: 80%;
+  height: 100vh;
+  @content;
+}
+$h1992: 75px;
+$h1800: 50px;
+$h1600: 35px;
+$h1300: 20px;
+// Desktops and large screens
+@media (max-width: 1200px) and(min-width:992px) {
+  .text {
+    p {
+      font-size: 50px;
+    }
+  }
+  .me {
+    h1 {
+      font-size: $h1992;
+    }
+  }
+}
+// ipads
+@media (max-width: 992px) and(min-width:800px) {
+  .logo {
+    font-size: 35px;
+  }
+  .main {
+    @include flexCol();
+    .text {
+      width: 100%;
+      text-align: left;
+      padding-bottom: 50px;
+      padding-top: 50px;
+      h1 {
+        font-size: $h1992;
+      }
+      p {
+        font-size: 25px;
+        text-align: left;
+      }
+      a {
+        padding: 5px 15px;
+        font-size: 15px;
+        margin-top: 25px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  .about {
+    @include flexCol {
+      flex-direction: column-reverse;
+    }
+    .me {
+      width: 100%;
+      padding-top: 150px;
+      text-align: center;
+      h1 {
+        font-size: $h1992;
+      }
+      p {
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+  }
+  .dp {
+    width: 100%;
+    height: 500px;
+  }
+  .dp2 {
+    width: 100%;
+    height: 500px;
+  }
+  .contact {
+    .social {
+      p {
+        font-size: 30px;
+      }
+      a {
+        font-size: 25px;
+      }
+      i {
+        font-size: 25px;
+      }
+    }
+    .msg 
+    {
+      p {
+        font-size: 30px;
+      }
+      .info{
+        h1{
+          font-size:15px;
+        }
+        h2{
+          font-size:25px;
+        }
+      }
+    }
+  }
+}
+//tablets
+@media (max-width: 800px) and(min-width:600px) {
+  .loader {
+    span,
+    #rocket {
+      font-size: 35px;
+    }
+  }
+  .logo {
+    font-size: 25px;
+  }
+  .main {
+    @include flexCol();
+    .text {
+      width: 100%;
+      padding-bottom: 50px;
+      padding-top: 75px;
+      text-align: left;
+      h1 {
+        font-size: $h1800;
+      }
+      p {
+        text-align: left;
+      }
+      a {
+        padding: 5px 12px;
+        font-size: 10px;
+        margin-top: 20px;
+        letter-spacing: 2px;
+      }
+    }
+    .dp {
+      height: 500px;
+      width: 100%;
+    }
+    .dp2 {
+      padding-bottom: 150px;
+    }
+  }
+  .about {
+    @include flexCol {
+      flex-direction: column-reverse;
+    }
+    .dp2 {
+      height: 500px;
+      width: 100%;
+    }
+    .me {
+      width: 100%;
+      margin-top: 100px;
+      text-align: center;
+      h1 {
+        font-size: $h1800;
+      }
+      p {
+        font-size: 25px;
+        text-align: center;
+      }
+    }
+  }
+  .contact {
+    width: 80%;
+    margin: auto;
+    .social {
+      p {
+        font-size: 25px;
+      }
+      a {
+        font-size: 20px;
+        line-height: 30px;
+      }
+      i {
+        font-size: 20px;
+      }
+    }
+    .msg 
+    {
+      p {
+        font-size: 25px;
+      }
+      .info{
+        h1{
+          font-size:15px;
+        }
+        h2{
+          font-size:25px;
+        }
+      }
+    }
+  }
+}
+//mobiles
+@media (max-width: 600px) and(min-width:300px) {
+  .loader {
+    span,
+    #rocket {
+      font-size: 25px;
+    }
+  }
+  .logo {
+    font-size: 20px;
+  }
+  nav {
+    ul {
+      li {
+        a {
+          font-size: 35px;
+        }
+      }
+    }
+  }
+  .main {
+    @include flexCol();
+    .text {
+      text-align: left;
+      padding-top: 75px;
+      width: 100%;
+      h1 {
+        font-size: $h1600;
+      }
+      h3 {
+        font-size: 15px;
+      }
+      h2 {
+        font-size: 25px;
+      }
+      h4 {
+        font-size: 15px;
+      }
+      a {
+        padding: 5px 10px;
+        font-size: 10px;
+        margin-top: 20px;
+        letter-spacing: 1px;
+      }
+    }
+    .dp {
+      width: 100%;
+      height: 250px;
+    }
+  }
+  .about {
+    @include flexCol {
+      flex-direction: column-reverse;
+    }
+    .dp2 {
+      width: 100%;
+      height: 250px;
+    }
+    .me {
+      width: 100%;
+      margin-top: 50px;
+      text-align: center;
+      h1 {
+        font-size: $h1600;
+      }
+      p {
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+  #skills {
+    height: 100vh;
+    width: 80%;
+  }
+  .skills {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+    h3 {
+      font-size: 20px;
+    }
+    .skillbar {
+      line-height: 25px;
+      h2 {
+        font-size: 15px;
+      }
+      .probar {
+        .pbar {
+          h1 {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+  .contact {
+    width: 80%;
+    margin: auto;
+    .social {
+      p {
+        font-size: 20px;
+      }
+      a {
+        font-size: 10px;
+        line-height: 15px;
+      }
+      i {
+        font-size: 10px;
+      }
+    }
+    .msg 
+    {
+      p {
+        font-size: 20px;
+      }
+      .info{
+        h1{
+          font-size:10px;
+        }
+        h2{
+          font-size:15px;
+        }
+      }
+    }
+  }
+}
+// jio mobile
+@media (max-width: 300px) and(min-width:0px) {
+  .loader {
+    span,
+    #rocket {
+      font-size: 20px;
+    }
+  }
+  .logo {
+    font-size: 15px;
+  }
+  nav {
+    ul {
+      li {
+        a {
+          font-size: 35px;
+        }
+      }
+    }
+    #skills {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      height: 100vh;
+      width: 80%;
+      margin: auto;
+    }
+  }
+  .nav {
+    top: 10px;
+    &:after {
+      width: 30px;
+    }
+    &::before {
+      width: 30px;
+    }
+  }
+
+  .main {
+    @include flexCol();
+    .text {
+      width: 100%;
+      text-align: left;
+      padding: 25px;
+      padding-top: 50px;
+      h1 {
+        font-size: $h1300;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      h4 {
+        font-size: 15px;
+      }
+      h3 {
+        font-size: 15px;
+      }
+      a {
+        padding: 5px 10px;
+        font-size: 10px;
+        margin-top: 20px;
+        letter-spacing: 1px;
+      }
+    }
+    .dp {
+      height: 200px;
+      width: 100%;
+    }
+  }
+  .about {
+    @include flexCol {
+      flex-direction: column-reverse;
+    }
+    .dp2 {
+      width: 100%;
+      height: 200px;
+    }
+    .me {
+      width: 100%;
+      margin-top: 50px;
+      text-align: center;
+      h1 {
+        padding-top: 15px;
+        font-size: $h1300;
+      }
+      p {
+        font-size: 10px;
+        text-align: center;
+      }
+      a {
+        padding: 5px 10px;
+        font-size: 5px;
+        margin-top: 20px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  #skills {
+    height: 100vh;
+    width: 80%;
+  }
+  .skills {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+    h3 {
+      font-size: 20px;
+    }
+    .skillbar {
+      line-height: 25px;
+      h2 {
+        font-size: 15px;
+      }
+      .probar {
+        .pbar {
+          h1 {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+  .contact {
+    width: 80%;
+    margin: auto;
+    footer {
+      .footer {
+        font-size: 15px;
+      }
+    }
+    .social {
+      p {
+        font-size: 20px;
+      }
+      a {
+        font-size: 8px;
+        line-height: 15px;
+      }
+      i {
+        font-size: 8px;
+      }
+    }
+    .msg 
+    {
+      p {
+        font-size: 20px;
+      }
+      .info{
+        h1{
+          font-size:10px;
+        }
+        h2{
+          font-size:15px;
+        }
+      }
+    }
+  }
+  .footer {
+    font-size: 10px;
+  }
+}
